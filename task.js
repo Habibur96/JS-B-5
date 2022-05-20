@@ -137,7 +137,22 @@ const displayPhotos = data => {
     data.forEach(info => {
         // console.log(info.thumbnailUrl)
         const div = document.createElement('div')
-        div.innerHTML = `<img src="${info.url}">`
+        div.classList.add('col');
+        div.innerHTML = `
+    
+            <div class="card">
+                <img src="${info.url}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in
+                        to additional content. This content is a little bit longer.</p>
+                        <button type="button" class="btn btn-primary btn-sm">Small button</button>
+                        
+                       
+                </div>
+            </div>        
+       
+`
         photo.appendChild(div)
     });
 }
