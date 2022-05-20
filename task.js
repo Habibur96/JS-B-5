@@ -79,3 +79,65 @@ console.log(solve);
 const array = [10, 14, 49, 12, 13, 27, 29, 45, 89, 78, 101];
 const newArray = [] = array.map(number => number / 7);
 console.log(newArray);
+
+
+
+//Task-8 (Uncomplete)
+
+
+const object1 = {
+
+    name: 'RJ Noyon',
+    id: '96',
+    isRich: true,
+    money: 7800,
+    favLan: 'C++',
+
+
+    otherInfo: {
+        hobby: 'problem-solving',
+        favColor: 'Black',
+        favGame: 'Cricket',
+        favPlayer: 'Tamim Iqbal'
+    },
+
+    tecnology: ['html', 'Css', 'js', 'react', 'node.js'],
+
+    moreInfo: function (expense) {
+
+        // console.log(this.otherInfo)
+        this.money = this.money - expense;
+        console.log(this)
+        return this.money;
+
+    }
+
+}
+
+// const [tecnology] = object1
+// console.log([tecnology])
+// const [tecnology] = object1.tecnology[0 + 1]
+// console.log[tecnology]
+
+//Task - 9
+
+const loadPhotos = () => {
+    fetch('https://jsonplaceholder.typicode.com/photos')
+        .then(res => res.json())
+        // .then(data => console.log(data))
+        .then(data => displayPhotos(data))
+
+}
+
+loadPhotos()
+
+const displayPhotos = data => {
+    console.log(data)
+    const photo = document.getElementById('photo')
+    data.forEach(info => {
+        // console.log(info.thumbnailUrl)
+        const div = document.createElement('div')
+        div.innerHTML = `<img src="${info.url}">`
+        photo.appendChild(div)
+    });
+}
