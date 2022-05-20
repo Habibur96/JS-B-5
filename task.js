@@ -74,4 +74,8 @@ const solve = calculation4(7, 25.89);
 console.log(solve);
 
 
-//Task-7
+//Task-7(Uncomplete)
+
+const array = [10, 14, 49, 12, 13, 27, 29, 45, 89, 78, 101];
+const newArray = [] = array.map(number => number / 7);
+console.log(newArray);
