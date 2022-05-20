@@ -136,23 +136,45 @@ const displayPhotos = data => {
     const photo = document.getElementById('photo')
     data.forEach(info => {
         // console.log(info.thumbnailUrl)
+        // console.log(info)
         const div = document.createElement('div')
         div.classList.add('col');
         div.innerHTML = `
     
-            <div class="card">
+            <div class="card" >
                 <img src="${info.url}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">This is a longer card with supporting text below as a natural lead-in
                         to additional content. This content is a little bit longer.</p>
-                        <button type="button" class="btn btn-primary btn-sm">Small button</button>
-                        
-                       
+                        <button onclick="singleInfo('${info.title}','${info.thumbnailUrl}','${info.url}')"type="button" class="btn btn-primary btn-sm">Small button</button>
+                   
                 </div>
             </div>        
        
 `
+        // console.log(info)
         photo.appendChild(div)
     });
+}
+
+const singleInfo = (title, thumbnailUrl, url) => {
+    const singleInfo = document.getElementById('singleInfo');
+    const div = document.createElement('div')
+    div.classList.add('col')
+    div.innerHTML = `
+    <div class="card" >
+                <img src="${url}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">${title}</h5>
+                    <h5 class="card-title">${thumbnailUrl}</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in
+                        to additional content. This content is a little bit longer.</p>
+                        
+                </div>
+            </div>  
+        
+`
+    singleInfo.appendChild(div);
+
 }
