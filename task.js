@@ -150,9 +150,8 @@ const displayPhotos = data => {
                         <button onclick="singleInfo('${info.title}','${info.thumbnailUrl}','${info.url}')"type="button" class="btn btn-primary btn-sm">Small button</button>
                    
                 </div>
-            </div>        
-       
-`
+            </div>`
+
         // console.log(info)
         photo.appendChild(div)
     });
@@ -160,6 +159,7 @@ const displayPhotos = data => {
 
 const singleInfo = (title, thumbnailUrl, url) => {
     const singleInfo = document.getElementById('singleInfo');
+    singleInfo.textContent = '';
     const div = document.createElement('div')
     div.classList.add('col')
     div.innerHTML = `
@@ -167,14 +167,9 @@ const singleInfo = (title, thumbnailUrl, url) => {
                 <img src="${url}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">${title}</h5>
-                    <h5 class="card-title">${thumbnailUrl}</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in
-                        to additional content. This content is a little bit longer.</p>
-                        
+                    <h5 class="card-title">${thumbnailUrl}</h5>           
                 </div>
-            </div>  
-        
-`
+            </div> `
     singleInfo.appendChild(div);
 
 }
